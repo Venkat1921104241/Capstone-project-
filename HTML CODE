@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Encoder/Decoder</title>
+    <style>
+          body {
+              font-family: Arial, sans-serif;
+              text-align: center;
+          }
+      h1{
+      padding: 20px;
+      background-color:orange;
+      }
+          input[type="text"] {
+              width: 60%;
+              padding: 20px;
+              margin-bottom: 30px;
+          }
+      div id{<br>}
+          button {
+              padding: 20px 20px;
+              cursor: pointer;
+              background-color: #007bff;
+              color: white;
+              border: none;
+              border-radius: 5px;
+          }
+          button:hover {
+              background-color: #0056b3;
+          }
+    </style>
+  </head>
+  <body>
+    <h1><b>CRYPTOGRAPHY</b></h1>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <input type="text" id="textInput" placeholder="Enter text..." />
+    <br />
+    <button onclick="encodeText()">Encode</button>
+    <button onclick="decodeText()">Decode</button>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div id="result"></div>
+
+    <script>
+      function encodeText() {
+        var text = document.getElementById("textInput").value;
+        var encodedText = btoa(text);
+        document.getElementById("result").innerText =
+          "Encoded Text: " + encodedText;
+      }
+
+      function decodeText() {
+        var text = document.getElementById("textInput").value;
+        try {
+          var decodedText = atob(text);
+          document.getElementById("result").innerText =
+            "Decoded Text: " + decodedText;
+        } catch (error) {
+          document.getElementById("result").innerText =
+            "Error: Invalid base64 encoded text!";
+        }
+      }
+    </script>
+  </body>
+</html>
